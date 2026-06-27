@@ -11,6 +11,10 @@ db = client["todo_db"]
 @app.route("/")
 def home():
     return "✅ Backend is running"
+@app.route("/todos", methods=["GET"])
+def get_todos():
+    todos = list(db.todos.find({}, {"_id": 0}))
+    return {"todos": todos}
     
 @app.route('/submittodoitem', methods=['POST'])
 def submit_todo():
