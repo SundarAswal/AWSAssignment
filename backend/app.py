@@ -8,7 +8,10 @@ CORS(app)
 client = MongoClient("mongodb+srv://thesundarsingh:SundarMongo1234@cluster0.sh84jvm.mongodb.net/?appName=Cluster0")
 
 db = client["todo_db"]
-
+@app.route("/")
+def home():
+    return "✅ Backend is running"
+    
 @app.route('/submittodoitem', methods=['POST'])
 def submit_todo():
     data = request.form
