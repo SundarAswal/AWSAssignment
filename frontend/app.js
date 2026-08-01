@@ -23,7 +23,7 @@ app.post("/submit", async (req, res) => {
 
         await axios.post(url, params);
 
-        res.send("Success");
+        res.send("✅ Todo item submitted successfully!");
     } catch (error) {
         console.error(error);
         res.send(error.message);
