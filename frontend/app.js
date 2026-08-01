@@ -17,7 +17,7 @@ app.post("/submit", async (req, res) => {
         params.append("itemName", req.body.itemName);
         params.append("itemDescription", req.body.itemDescription);
 
-        const url = "/api/submittodoitem";
+        const url = "http://localhost:5000/submittodoitem"
 
         console.log("URL =", JSON.stringify(url));
 
