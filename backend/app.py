@@ -11,7 +11,7 @@ db = client["todo_db"]
 
 @app.route("/")
 def home():
-    return "NEW VERSION WORKING", 200
+    return "✅ Backend is running"
 
 @app.route("/todos", methods=["GET"])
 def get_todos():
@@ -27,7 +27,7 @@ def submit_todo():
         "itemDescription": data.get("itemDescription")
     })
 
-    return "Saved"
+    return "✅ Todo item submitted successfully!"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
