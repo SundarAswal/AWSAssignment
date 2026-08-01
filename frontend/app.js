@@ -17,12 +17,16 @@ app.post("/submit", async (req, res) => {
         params.append("itemName", req.body.itemName);
         params.append("itemDescription", req.body.itemDescription);
 
-        await axios.post("http://13.60.213.121:5000/submittodoitem", params);
+        const url = "/api/submittodoitem";
 
-        res.send("✅ Data sent to backend successfully!");
+        console.log("URL =", JSON.stringify(url));
+
+        await axios.post(url, params);
+
+        res.send("Success");
     } catch (error) {
-        console.error("ERROR:", error.message);
-        res.send("❌ Error connecting backend: " + error.message);
+        console.error(error);
+        res.send(error.message);
     }
 });
 
